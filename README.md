@@ -21,6 +21,14 @@ You can use one or all of follows API:
  * Payture eWallet
  * Payture ApplePay
 
+*Important:*
+Every API function received callback function as second parameter. You need to provide callback for taking required action after receiving a response from the server. 
+The callback accepts 4 parameters:
+```javascript
+var callbackFunc = function(error, response, body, responseObject){
+    // do some work with received arguments....
+};
+```
 
 ## Payture API
 For use this you need create instanse of PaytureAPI object and pass in the name of HOST and params of your Merchant account, like this:
