@@ -38,15 +38,15 @@ exports.PaytureInPay = function PaytureInPay(host, merchant) {
     };
 
     this.unblock = function(data, callbackFunc){
-        unblockOrChargeOrRefund(data, payture.COMMANDS.UNBLOCK, this);
+        unblockOrChargeOrRefund(data, payture.COMMANDS.UNBLOCK, this, callbackFunc);
     };
 
     this.refund = function(data, callbackFunc){
-        unblockOrChargeOrRefund(data, payture.COMMANDS.REFUND, this);
+        unblockOrChargeOrRefund(data, payture.COMMANDS.REFUND, this, callbackFunc);
     };
 
     this.charge = function(data, callbackFunc){
-        unblockOrChargeOrRefund(data, payture.COMMANDS.CHARGE, this);
+        unblockOrChargeOrRefund(data, payture.COMMANDS.CHARGE, this, callbackFunc);
     };
 
     function unblockOrChargeOrRefund(data, command, obj, callbackFunc) {
