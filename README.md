@@ -16,10 +16,10 @@ var payture = require('payture-official');
 ## Payture API tutorial
 You can use one or all of follows API:
 
- * Payture API
- * Payture InPay
- * Payture eWallet
- * Payture ApplePay
+ * [Payture API](#Payture-API)
+ * [Payture InPay](#Payture-InPay)
+ * [Payture eWallet](#Payture-eWallet)
+ * [Payture ApplePay](#Payture-ApplePay)
 
 *Important:*
 Every API function received callback function as second parameter. You need to provide callback for taking required action after receiving a response from the server. 
