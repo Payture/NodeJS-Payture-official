@@ -1,0 +1,32 @@
+{
+  "name": "payture-official",
+  "version": "0.0.1",
+  "description": "Official Payture API for NodeJS",
+  "main": "payture-official.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Payture/NodeJS-Payture-official"
+  },
+  "keywords": [
+    "payture-official",
+    "payture",
+    "payture js",
+    "API",
+    "nodeJS",
+    "payment",
+    "online payments",
+    "processing",
+    "ewallet"
+  ],
+  "author": "Soloveva Elena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Payture/NodeJS-Payture-official/issues"
+  },
+  "homepage": "https://github.com/Payture/NodeJS-Payture-official",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.81.0",
+    "elementtree": "^0.1.7"
+  }
+}
