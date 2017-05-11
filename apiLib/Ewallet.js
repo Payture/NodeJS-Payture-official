@@ -50,7 +50,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
                     name: 'Data',
                     value: payture.toEncodeUrl({
                         VWUserLgn : data.VWUserLgn,
-                        Password : data.Password
+                        Password : this.Password
                     })
                 },
             ], callbackFunc); 
@@ -85,7 +85,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
 /*
 * region Cards
 */
-    this.addCardOnMerchantSide = function(data, callbackFunc) {
+    this.merchantAddCard = function(data, callbackFunc) {
         payture.sendRequest(this, payture.COMMANDS.ADD, 'POST', [
                 {
                     name: 'VWID',
@@ -108,7 +108,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
             ], callbackFunc); 
     };
 
-    this.addCardOnPaytureSide = function(sessionId, callbackFunc){
+    this.paytureAddCard = function(sessionId, callbackFunc){
         payture.sendRequest(this, payture.COMMANDS.ADD, 'POST', [
                 {
                     name: 'SessionId',
@@ -203,7 +203,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
         ], callbackFunc, (data.SessionType == 'Add' ? 'Add' : 'Pay')); 
     };
 
-    this.payOnMerchantSideForRegCard = function(data, callbackFunc){
+    this.merchantPayRegCard = function(data, callbackFunc){
 
         payture.sendRequest(this, payture.COMMANDS.PAY, 'POST', [
             {
@@ -228,7 +228,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
         ], callbackFunc); 
     };
 
-    this.payOnMerchantSideForNoRegCard = function(data, callbackFunc){
+    this.merchantPayNoRegCard = function(data, callbackFunc){
         payture.sendRequest(this, payture.COMMANDS.PAY, 'POST', [
             {
                 name: 'VWID',
@@ -303,7 +303,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
 
             {
                 name: 'Password',
-                value: data.Password
+                value: obj.Password
             },
             {
                 name: 'OrderId',
@@ -329,7 +329,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
                 value: payture.toEncodeUrl({
                     OrderId : data.OrderId,
                     Amount : data.Amount,
-                    Password : data.Password
+                    Password : this.Password
                 })
             }
         ], callbackFunc);  
