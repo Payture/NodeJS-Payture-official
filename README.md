@@ -55,7 +55,7 @@ var api = new payture.Api('https://sandbox.payture.com', { Key : 'Merchant', Pas
 ```
 ### API Functions:
 All functions taking 2 parameters: first -  required for request data as js object, second - callback function that you need specify. The functions list and examples of usage below. Let's go to explore!
-* pay
+* **pay** <a id="pay"></a>
 ```javascript
 var data = {
     OrderId : 'ORD00000000000000001',
@@ -85,11 +85,48 @@ Description of provided params.
 | CustomerKey      | Customer identifier in Payture AntiFraud system.                  |
 | CustomFields     | Addition fields for processing (especially for AntiFraud system). |
 
-* block
-* charge
-* refund
-* unblock
-* getState
+* **block**
+The data and description for params as the same as for [pay](#pay) function.
+```javascript
+api.block(data, callbackFunc);
+```
+* **charge** <a id="charge"></a>
+```javascript
+var data = {
+    OrderId : 'ORD00000000000000001',
+    Amount : 10000
+};
+api.charge(data, callbackFunc);
+```
+Description of provided params.
+
+| Parameter's name | Definition                                                        |
+| ---------------- | ----------------------------------------------------------------- |
+| OrderId          | Payment identifier in your service system.                        |
+| Amount           | Amount of payment kopec.                                          |
+
+* **refund**
+The data and description for params as the same as for [charge](#charge) function.
+```javascript
+api.refund(data, callbackFunc);
+```
+* **unblock** 
+The data and description for params as the same as for [charge](#charge) function.
+```javascript
+api.unblock(data, callbackFunc);
+```
+* **getState**
+```javascript
+var data = {
+    OrderId : 'ORD00000000000000001'
+};
+api.getState(data, callbackFunc);
+```
+Description of provided params.
+
+| Parameter's name | Definition                                                        |
+| ---------------- | ----------------------------------------------------------------- |
+| OrderId          | Payment identifier in your service system.                        |
 
 ***
 ## Payture InPay <a id="InPay"></a>
