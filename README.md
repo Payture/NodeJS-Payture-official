@@ -30,11 +30,21 @@ var callbackFunc = function(error, response, body, responseObject){
     // do some work with received arguments....
 };
 ```
+* *error* - if no one error occurs when handing request the value of this parameter will be null, otherwise - in case of error - the value is the error;
+* *response* - the raw response from the external server;
+* *body* - body of the received response;
+* *responseObject* - this is body of the response as js object;
+
+
 #### API Initialization
 For create instanse of required API you need provide the name of Host and params of your Merchant account (Key and Password).
+
 **HOST**
+
 Pass the 'https://sandbox.payture.com' for test as the name of Host (first parameter).
+
 **Merchant**
+
 Params of Merchant account provide as the second parameter for constructor function in simple object, like: { Key: 'Merchant', Password: 123 };
 Examples you can see below.
 
