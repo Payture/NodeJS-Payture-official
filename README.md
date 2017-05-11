@@ -46,6 +46,7 @@ Pass the 'https://sandbox.payture.com' for test as the name of Host (first param
 **Merchant**
 
 Params of Merchant account provide as the second parameter for constructor function in simple object, like: { Key : 'YourMerchantAccount', Password : 'YourPassword' };
+
 Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
 Examples you can see below.
 
