@@ -51,8 +51,10 @@ Examples you can see below.
 ## Payture API <a id="API"></a>
 For use this you need create instanse of PaytureAPI object. Example:
 ```javascript
-var api = new payture.Api('https://sandbox.payture.com', { Key : 'Merchant', Password : 123 });
+var api = new payture.Api('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' };
 ```
+Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
+
 ### API Functions:
 All functions taking 2 parameters: first -  required for request data as js object, second - callback function that you need specify. The functions list and examples of usage below. Let's go to explore!
 #### pay <a id="pay"></a>
@@ -131,8 +133,10 @@ Description of provided params.
 ## Payture InPay <a id="InPay"></a>
 For use this API just create instanse of PaytureInPay object:
 ```javascript
-var inpay = new payture.InPay('https://sandbox.payture.com', { Key : 'Merchant', Password : 123 });
+var inpay = new payture.InPay('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' });
 ```
+Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
+
 ### API Functions:
 #### init
 ```javascript
@@ -212,8 +216,9 @@ Description of provided params.
 ## Payture eWallet <a id="eWallet"></a>
 For use this API just create instanse of PaytureEWallet object:
 ```javascript
-var ew = new payture.EWallet('https://sandbox.payture.com', { Key : 'VWMerchant', Password : 2645363 });
+var ew = new payture.EWallet('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' });
 ```
+Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
 
 ### API Functions:
 #### Payment functions:
@@ -535,8 +540,9 @@ Description of provided params.
 ## Payture ApplePay <a id="ApplePay"></a>
 For use this API just create instanse of PaytureAppleApi object:
 ```javascript
-var apple = new payture.ApplePay('https://sandbox.payture.com', { Key : 'VWMerchant', Password : 2645363 });
+var apple = new payture.ApplePay('https://sandbox.payture.com',  { Key : 'YourMerchantAccount', Password : 'YourPassword' });
 ```
+Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
 ### API Functions:
 #### pay <a id="payApple"></a>
 ```javascript
