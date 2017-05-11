@@ -1,4 +1,5 @@
 var payture = new (require('./paytureCommon')).PaytureCommon();
+var pApi = require('./Api');
 
 exports.PaytureAppleApi = function PaytureAppleApi(host, merchantKey){
     if(host === undefined)
@@ -12,8 +13,7 @@ exports.PaytureAppleApi = function PaytureAppleApi(host, merchantKey){
         this.Merchant = merchantKey;
     }
 
-    this.Response = undefined;
-
+    var api = new pApi.PaytureAPI(this.Host, merchantKey);
 
     this.pay = function pay(data, callbackFunc){
         this.Method = 'PAY';
@@ -47,6 +47,10 @@ exports.PaytureAppleApi = function PaytureAppleApi(host, merchantKey){
                         
                     ], callbackFunc);
     };
+
+    this.charge = api.charge;
+    this.unblock = api.unblock;
+    this.refund = api.refund;
     return this;
 }
 
