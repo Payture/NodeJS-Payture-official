@@ -54,7 +54,37 @@ For use this you need create instanse of PaytureAPI object. Example:
 var api = new payture.Api('https://sandbox.payture.com', { Key : 'Merchant', Password : 123 });
 ```
 ### API Functions:
+All functions taking 2 parameters: first -  required for request data as js object, second - callback function that you need specify. The functions list and examples of usage below. Let's go to explore!
 * pay
+```javascript
+var data = {
+    OrderId : 'ORD00000000000000001',
+    Amount : 10000,
+    PAN : '4111111111111112',
+    EMonth : 12,
+    EYear : 20,
+    CardHolder : 'Vasya Petrov',
+    SecureCode : 123,
+    CustomerKey : 'testCustomer',
+    CustomFields : {},
+};
+api.pay(data, callbackFunc);
+```
+Description of provided params.
+
+| Parameter's name | Definition                                                        |
+| ---------------- | ----------------------------------------------------------------- |
+| OrderId          | Payment identifier in your service system.                        |
+| Amount           | Amount of payment kopec.                                          |
+| PAN              | Card's number.                                                    |
+| EMonth           | The expiry month of card.                                         |
+| EYear            | The expiry year of card.                                          |
+| PAN              | extension to be used for dest files.                              |
+| CardHolder       | Card's holder name.                                               |
+| SecureCode       | CVC2/CVV2.                                                        |
+| CustomerKey      | Customer identifier in Payture AntiFraud system.                  |
+| CustomFields     | Addition fields for processing (especially for AntiFraud system). |
+
 * block
 * charge
 * refund
