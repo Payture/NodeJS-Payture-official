@@ -16,10 +16,10 @@ var payture = require('payture-official');
 ## Payture API tutorial
 You can use one or all of follows API:
 
- * [Payture API](#Payture-API)
- * [Payture InPay](#Payture-InPay)
- * [Payture eWallet](#Payture-eWallet)
- * [Payture ApplePay](#Payture-ApplePay)
+ * [Payture API](#API)
+ * [Payture InPay](#InPay)
+ * [Payture eWallet](#eWallet)
+ * [Payture ApplePay](#ApplePay)
 
 *Important:*
 Every API function received callback function as second parameter. You need to provide callback for taking required action after receiving a response from the server. 
@@ -30,7 +30,7 @@ var callbackFunc = function(error, response, body, responseObject){
 };
 ```
 
-## Payture API
+## Payture API <a id="API"></a>
 For use this you need create instanse of PaytureAPI object and pass in the name of HOST and params of your Merchant account, like this:
 ```javascript
 var api = new payture.Api('https://sandbox.payture.com', { Key : 'Merchant', Password : 123 });
@@ -44,7 +44,7 @@ var api = new payture.Api('https://sandbox.payture.com', { Key : 'Merchant', Pas
 * getState
 
 ***
-## Payture InPay
+## Payture InPay <a id="InPay"></a>
 For use this API just create instanse of PaytureInPay object with the name of HOST and params of your Merchant account:
 ```javascript
 var api = new payture.InPay('https://sandbox.payture.com', { Key : 'Merchant', Password : 123 });
@@ -59,7 +59,7 @@ var api = new payture.InPay('https://sandbox.payture.com', { Key : 'Merchant', P
 
 ***
 
-## Payture eWallet
+## Payture eWallet <a id="eWallet"></a>
 For use this API just create instanse of PaytureEWallet object with the name of HOST and params of your Merchant account:
 ```javascript
 var api = new payture.EWallet('https://sandbox.payture.com', { Key : 'VWMerchant', Password : 2645363 });
@@ -91,7 +91,7 @@ var api = new payture.EWallet('https://sandbox.payture.com', { Key : 'VWMerchant
 * getCardList
 ***
 
-## Payture ApplePay
+## Payture ApplePay <a id="ApplePay"></a>
 For use this API just create instanse of PaytureAppleApi object with the name of HOST and params of your Merchant account:
 ```javascript
 var api = new payture.ApplePay('https://sandbox.payture.com', { Key : 'VWMerchant', Password : 2645363 });
