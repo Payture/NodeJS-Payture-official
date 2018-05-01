@@ -68,7 +68,7 @@ exports.PaytureCommon = function PaytureCommon(){
             }
         }
 
-        return querystring.stringify(obj, ';', '=');
+        return querystring.stringify(objectCopy, ';', '=');
     };
 
     this.COMMANDS = {
