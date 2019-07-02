@@ -53,7 +53,7 @@ Examples you can see below.
 ## Payture API <a id="API"></a>
 For use this you need create instanse of PaytureAPI object. Example:
 ```javascript
-var api = new payture.Api('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' };
+var api = new payture.Api('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' });
 ```
 Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
 
