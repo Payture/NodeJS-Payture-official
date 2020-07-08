@@ -61,7 +61,14 @@ exports.PaytureCommon = function PaytureCommon(){
     };
 
     this.toEncodeUrl = function toEncodeUrl(obj){
-        return querystring.stringify(obj, ';', '=');
+        var objectCopy = Object.assign(obj);
+        for (var key in objectCopy) {
+            if (objectCopy[key] === undefined) {
+                delete objectCopy[key];
+            }
+        }
+
+        return querystring.stringify(objectCopy, ';', '=');
     };
 
     this.COMMANDS = {
