@@ -348,6 +348,21 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
             }
         ], callbackFunc);  
     };
+
+    this.getState = function(data, callbackFunc){
+        payture.sendRequest(this, payture.COMMANDS.GETSTATE, 'GET', [
+                    {
+                        name: 'Key',
+                        value: this.Merchant
+                    },
+
+                    {
+                        name: 'OrderId',
+                        value: data.OrderId
+                    }
+                ], callbackFunc );
+    };
+    
 /*
 * endregion PaymentsApi
 */

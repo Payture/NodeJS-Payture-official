@@ -53,7 +53,7 @@ Examples you can see below.
 ## Payture API <a id="API"></a>
 For use this you need create instanse of PaytureAPI object. Example:
 ```javascript
-var api = new payture.Api('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' };
+var api = new payture.Api('https://sandbox.payture.com', { Key : 'YourMerchantAccount', Password : 'YourPassword' });
 ```
 Please note, that { Key : 'YourMerchantAccount', Password : 'YourPassword' } - fake account, [our support](http://payture.com/kontakty/) help you to get one!
 
@@ -121,6 +121,7 @@ api.unblock(data, callbackFunc);
 #### getState
 ```javascript
 var data = {
+    Key : 'YourMerchantAccount',
     OrderId : 'ORD00000000000000001'
 };
 api.getState(data, callbackFunc);
@@ -129,6 +130,7 @@ Description of provided params.
 
 | Parameter's name | Definition                                                        |
 | ---------------- | ----------------------------------------------------------------- |
+| Key              | YourMerchantAccount                                               |
 | OrderId          | Payment identifier in your service system.                        |
 
 ***
