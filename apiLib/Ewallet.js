@@ -197,7 +197,8 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
                     PhoneNumber : data.PhoneNumber,
                     CardId : data.CardId,
                     TemplateTag : data.TemplateTag,
-                    Language : data.Language
+                    Language : data.Language,
+                    Url : data.Url
                 })
             },
         ], callbackFunc, (data.SessionType == 'Add' ? 'Add' : 'Pay')); 
