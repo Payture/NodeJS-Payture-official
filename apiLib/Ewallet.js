@@ -188,6 +188,7 @@ this.init = function(data, callbackFunc) {
         }
     }
 
+
     // Prepare the request data
     let requestData = [
         {
@@ -206,6 +207,7 @@ this.init = function(data, callbackFunc) {
     // Send the request
     payture.sendRequest(this, payture.COMMANDS.INIT, 'POST', requestData, callbackFunc, commandType);
 };
+
 
     this.merchantPayRegCard = function(data, callbackFunc){
 
