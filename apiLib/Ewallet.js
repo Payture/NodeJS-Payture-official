@@ -178,31 +178,36 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
 /*
 * region PaymentsApi
 */
-    this.init = function(data, callbackFunc){
-        payture.sendRequest(this, payture.COMMANDS.INIT, 'POST', [
-            {
-                name: 'VWID',
-                value: this.VWID
-            },
+this.init = function(data, callbackFunc) {
+    let encodedData = {};
 
-            {
-                name: 'Data',
-                value: payture.toEncodeUrl({
-                    SessionType : data.SessionType,
-                    IP : data.IP,
-                    OrderId : data.OrderId,
-                    Amount : data.Amount,
-                    VWUserLgn : data.VWUserLgn,
-                    VWUserPsw : data.VWUserPsw,
-                    PhoneNumber : data.PhoneNumber,
-                    CardId : data.CardId,
-                    TemplateTag : data.TemplateTag,
-                    Language : data.Language,
-                    Url : data.Url
-                })
-            },
-        ], callbackFunc, (data.SessionType == 'Add' ? 'Add' : 'Pay')); 
-    };
+    // Iterate over each key in the data object
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            encodedData[key] = data[key];
+        }
+    }
+
+
+    // Prepare the request data
+    let requestData = [
+        {
+            name: 'VWID',
+            value: this.VWID
+        },
+        {
+            name: 'Data',
+            value: payture.toEncodeUrl(encodedData)
+        },
+    ];
+
+    // Determine the command type
+    let commandType = (data.SessionType === 'Add' ? 'Add' : 'Pay');
+
+    // Send the request
+    payture.sendRequest(this, payture.COMMANDS.INIT, 'POST', requestData, callbackFunc, commandType);
+};
+
 
     this.merchantPayRegCard = function(data, callbackFunc){
 
