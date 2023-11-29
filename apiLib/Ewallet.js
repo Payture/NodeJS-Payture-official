@@ -356,7 +356,7 @@ this.init = function(data, callbackFunc) {
     };
 
     this.getState = function(data, callbackFunc){
-        payture.sendRequest(this, payture.COMMANDS.GETSTATE, 'GET', [
+        payture.sendRequest(this, payture.COMMANDS.GETSTATE, 'POST', [
                     {
                         name: 'Key',
                         value: this.Merchant
