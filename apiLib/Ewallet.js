@@ -359,7 +359,7 @@ this.init = function(data, callbackFunc) {
         payture.sendRequest(this, payture.COMMANDS.GETSTATE, 'POST', [
                     {
                         name: 'Key',
-                        value: this.Merchant
+                        value: this.VWID
                     },
 
                     {
