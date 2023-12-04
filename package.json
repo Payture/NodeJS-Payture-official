@@ -1,6 +1,6 @@
 {
   "name": "payture-official",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Official Payture API for NodeJS",
   "main": "payture-official.js",
   "repository": {
